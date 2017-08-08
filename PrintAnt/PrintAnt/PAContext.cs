@@ -12,7 +12,7 @@ namespace PrintAnt
         public PAContext()
             {
             }
-        public DbSet<Model.DocTemplate> DocTemplates;
+        public DbSet<Model.DocTemplate> DocTemplates { get; set; }
 
     }
 }
