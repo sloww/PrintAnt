@@ -12,18 +12,24 @@ namespace PrintAnt.Model
     /// 用来定义文档的外观的结构 主要是描述xml
     /// </summary>
     [Table("PADocTemplate", Schema = "dbo")]
-    class DocTemplate
+    class DocTemplate:ICloneable
     {
-        int ID;
         [Required]
-        Guid DocGuid;
+        int ID { get; set; }
         [Required]
-        string PinterFullName;
+        Guid DocGuid { get; set; }
         [Required]
-        string DocTemplateName;
+        string PinterFullName { get; set; }
         [Required]
-        string Xml;
+        string DocTemplateName { get; set; }
         [Required]
-        DateTime CreateDateTime;
+        string Xml { get; set; }
+        [Required]
+        DateTime CreateDateTime { get; set; }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }
